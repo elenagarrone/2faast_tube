@@ -1,4 +1,4 @@
-2.00 FAAST Tube System
+2.0 FAAST Tube System
 ======================
 
 The FAAST system will cater for the follwoing:
