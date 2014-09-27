@@ -14,10 +14,5 @@ describe Station do
 		station.dock(train)
 		expect{station.undock(train)}.to change{station.train_count}.to 0
 	end
-	
-	it "should not dock more than 4 trains at the time" do
-		5.times{station.dock(train)}
-		expect{station.crowded?}.to raise_error "Sorry, no more train are accepted at this station"
-	end
 
 end

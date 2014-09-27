@@ -15,15 +15,12 @@ class Station
 	end
 
 	def dock(train)
+		raise "Sorry, no more train are accepted at this station" if train_count > 4
 		@trains << train
 	end
 
 	def undock(train)
 		@trains.delete(train)
-	end
-
-	def crowded?
-		raise "Sorry, no more train are accepted at this station" if train_count == 5
 	end
 
 end
