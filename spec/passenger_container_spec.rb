@@ -1,10 +1,11 @@
 require 'passenger_container'
 require 'passenger'
 
+class ContainerHolder; include PassengerContainer; end
 
 describe PassengerContainer do
 
-	let(:holder) {PassengerContainer.new}
+	let(:holder) {ContainerHolder.new}
 	let(:passenger) {Passenger.new}
 
 

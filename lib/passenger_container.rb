@@ -1,10 +1,10 @@
-class PassengerContainer
+module PassengerContainer
 
 	DEFAULT_CAPACITY = 40
 
 	attr_reader :passengers
 
-	def initialize(options = {})
+	def passengers
 		@passengers ||= []
 	end
 	
@@ -12,9 +12,9 @@ class PassengerContainer
 		passengers.count
 	end
 
-	def let_in(passenger)
-		passengers << passenger
-	end
+    def let_in(passenger)
+        passengers << passenger
+    end
 
 	def release(passenger)
 		passengers.delete(passenger)
@@ -25,7 +25,8 @@ class PassengerContainer
 	end
 
 	def full?
-		raise "Sorry, you can\'t access, it\'s full" if passenger_count == capacity
+		raise "Sorry, you can\'t access, it\'s full" if passenger_count >= capacity
 	end
+
 	
 end
