@@ -19,7 +19,7 @@ describe PassengerContainer do
 	end
 
 	it "should not accept people when it's full" do
-		40.times {holder.let_in(passenger)}
+		200.times {holder.let_in(passenger)}
 		expect(lambda{holder.full?}).to raise_error("Sorry, you can\'t access, it\'s full")
 	end
 	

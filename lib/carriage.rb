@@ -2,7 +2,7 @@ class Carriage
 
 	include PassengerContainer
 
-	def initialize(capacity = 15)
+	def initialize(capacity = 40)
 		@capacity = capacity
 	end
 

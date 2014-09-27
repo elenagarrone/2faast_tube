@@ -15,12 +15,19 @@ class Station
 	end
 
 	def dock(train)
-		raise "Sorry, no more train are accepted at this station" if train_count > 4
+		raise "Sorry, no more train are accepted at this station" if train_count >= 4
 		@trains << train
 	end
 
 	def undock(train)
 		@trains.delete(train)
+	end
+
+	def transfer(station)
+		@trains.each do |train|
+			undock(train)
+			station.dock(train)  #it gives 'undefined method dock on irb' ?????
+		end
 	end
 
 end

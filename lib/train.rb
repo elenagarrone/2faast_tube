@@ -9,7 +9,7 @@ class Train
 	end
 
 	def hold(carriage)
-		raise "You can't add anymore carriages" if carriage_count > 5
+		raise "You can't add anymore carriages" if carriage_count >= 5
 		carriages << carriage
 	end
 

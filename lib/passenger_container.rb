@@ -1,6 +1,6 @@
 module PassengerContainer
 
-	DEFAULT_CAPACITY = 40
+	DEFAULT_CAPACITY = 200
 
 	attr_reader :passengers
 
