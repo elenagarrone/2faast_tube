@@ -5,8 +5,7 @@ describe Train do
 
 	let(:train) {Train.new}
 	let(:carriage) {Carriage.new}
-	let(:station) {Station.new}
-	let(:station2) {Station.new}
+	
 	
 	it "should hold a carriage" do
 		expect{train.hold(carriage)}.to change{train.carriage_count}.to 1

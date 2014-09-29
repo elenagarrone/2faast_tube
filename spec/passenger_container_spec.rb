@@ -1,12 +1,11 @@
 require 'passenger_container'
-require 'passenger'
 
 class ContainerHolder; include PassengerContainer; end
 
 describe PassengerContainer do
 
 	let(:holder) {ContainerHolder.new}
-	let(:passenger) {Passenger.new}
+	let(:passenger) {double :passenger}
 
 
 	it "should let a passenger in" do
@@ -20,7 +19,12 @@ describe PassengerContainer do
 
 	it "should not accept people when it's full" do
 		200.times {holder.let_in(passenger)}
-		expect(lambda{holder.full?}).to raise_error("Sorry, you can\'t access, it\'s full")
+		expect{holder.let_in(passenger)}.to raise_error("Sorry, you can\'t access, it\'s full")
+	end
+
+	it "should know if its full" do
+		200.times {holder.let_in(passenger)}
+		expect(holder).to be_full
 	end
 	
 end

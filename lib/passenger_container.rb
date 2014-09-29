@@ -13,7 +13,8 @@ module PassengerContainer
 	end
 
     def let_in(passenger)
-        passengers << passenger
+    	raise "Sorry, you can\'t access, it\'s full"  if full?
+        passengers << passenger 
     end
 
 	def release(passenger)
@@ -25,7 +26,7 @@ module PassengerContainer
 	end
 
 	def full?
-		raise "Sorry, you can\'t access, it\'s full" if passenger_count >= capacity
+		 passenger_count >= capacity
 	end
 
 	

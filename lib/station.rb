@@ -4,10 +4,12 @@ class Station
 
 	include PassengerContainer
 
-	attr_reader :trains
+	attr_reader :trains, :passengers
+	
 
 	def initialize
 		@trains = []
+		@passengers = []
 	end
 
 	def train_count
@@ -26,7 +28,14 @@ class Station
 	def transfer(station)
 		@trains.each do |train|
 			undock(train)
-			station.dock(train)  #it gives 'undefined method dock on irb' ?????
+			station.dock(train) 
+		end
+	end
+
+	def move(station)
+		@passengers.each do |passenger|
+			release(passenger)
+			station.let_in(passenger)
 		end
 	end
 
