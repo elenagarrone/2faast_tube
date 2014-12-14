@@ -19,7 +19,7 @@ describe PassengerContainer do
 
 	it "should not accept people when it's full" do
 		200.times { holder.let_in(passenger) }
-		expect{ holder.let_in(passenger) }.to raise_error("Sorry, you can\'t access, it\'s full")
+		expect{ holder.let_in(passenger) }.to raise_error("Sorry, you can't access, it's full")
 	end
 
 	it "should know if its full" do
