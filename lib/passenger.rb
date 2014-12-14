@@ -7,6 +7,10 @@ class Passenger
 		@oyster_credit = 0
 	end
 
+	def add_credit(pounds)
+		@oyster_credit = pounds
+	end
+
 	def touched?
 		@touch_in
 	end

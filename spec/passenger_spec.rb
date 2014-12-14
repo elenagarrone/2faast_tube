@@ -12,6 +12,10 @@ describe Passenger do
     expect(passenger.oyster_credit).to equal(0)
   end
 
+  it "should be able to add credit to the oyster" do
+    expect{ passenger.add_credit(5) }.to change{ passenger.oyster_credit }.by 5
+  end
+
   it "should be able to touch-in" do
     expect(passenger.touch_in).to be(true)
   end
