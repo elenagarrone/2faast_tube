@@ -24,11 +24,11 @@ class Station
 		@trains.delete(train)
 	end
 
-	def transfer(station)
+	def transfer_train_to(station)
 		@trains.each { |train| undock(train); station.dock(train) }
 	end
 
-	def move(station)
+	def move_passenger(station)
 		@passengers.each { |passenger| release(passenger); station.let_in(passenger) }
 	end
 

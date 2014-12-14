@@ -21,13 +21,13 @@ describe Station do
 
 	it "should transfer a train from station to station" do
 		station.dock(train)
-		expect{ station.transfer(station2) }.to change{ station2.train_count }.to 1
+		expect{ station.transfer_train_to(station2) }.to change{ station2.train_count }.to 1
 	end
 
 	it "should transfer a passenger from station to station" do
 		passenger.touch_in
 		station.let_in(passenger)
-		expect{ station.move(station2) }.to change{ station2.passenger_count }.to 1
+		expect{ station.move_passenger(station2) }.to change{ station2.passenger_count }.to 1
 	end
 
 end
