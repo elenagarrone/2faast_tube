@@ -25,7 +25,7 @@ describe Station do
 	end
 
 	it "should transfer a passenger from station to station" do
-		passenger.touch_in
+		passenger.add_credit(2); passenger.touch_in
 		station.let_in(passenger)
 		expect{ station.move_passenger(station2) }.to change{ station2.passenger_count }.to 1
 	end
