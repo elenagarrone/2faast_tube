@@ -16,8 +16,10 @@ class Station
 	end
 
 	def dock(train)
-		raise "Sorry, no more train are accepted at this station" if train_count >= 4
-		@trains << train
+		if !train.carriages.empty?
+			raise "Sorry, no more train are accepted at this station" if train_count >= 4
+			@trains << train
+		end
 	end
 
 	def undock(train)

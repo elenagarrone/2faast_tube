@@ -8,19 +8,25 @@ describe Station do
 	let(:station2)  { Station.new }
 	let(:train)     { Train.new }
 	let(:passenger) { Passenger.new }
+	let(:carriage)  { Carriage.new }
 
 
-	it "should be able to dock a train" do
+	it "should not be able to dock a train if it doesn't have 1 carriage" do
+		expect{ station.dock(train) }.to change{ station.train_count }.by 0
+	end
+
+	it "should be able to dock a train only if it has at least 1 carriage" do
+		train.hold(carriage)
 		expect{ station.dock(train) }.to change{ station.train_count }.to 1
 	end
 
 	it "should be able to undock a train" do
-		station.dock(train)
+		train.hold(carriage); station.dock(train)
 		expect{ station.undock(train) }.to change{ station.train_count }.to 0
 	end
 
 	it "should transfer a train from station to station" do
-		station.dock(train)
+		train.hold(carriage); station.dock(train)
 		expect{ station.transfer_train_to(station2) }.to change{ station2.train_count }.to 1
 	end
 
