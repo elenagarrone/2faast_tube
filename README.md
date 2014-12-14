@@ -33,7 +33,3 @@ Test it:
 ```shell
 $ rspec
 ```
-
-To do:
---------
-- add payments for passengers
