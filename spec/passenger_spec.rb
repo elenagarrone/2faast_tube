@@ -16,6 +16,11 @@ describe Passenger do
     expect{ passenger.add_credit(5) }.to change{ passenger.oyster_credit }.by 5
   end
 
+  it "should be able to add credit on top of other credit" do
+    passenger.add_credit(2)
+    expect{ passenger.add_credit(5) }.to change{ passenger.oyster_credit }.to 7
+  end
+
   it "should be able to touch-in only with a minimum credit of £2" do
     passenger.add_credit(4)
     expect(passenger.touch_in).to be(true)

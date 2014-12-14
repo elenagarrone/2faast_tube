@@ -8,7 +8,7 @@ class Passenger
 	end
 
 	def add_credit(pounds)
-		@oyster_credit = pounds
+		@oyster_credit += pounds
 	end
 
 	def touched?
