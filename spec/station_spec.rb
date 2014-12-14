@@ -11,11 +11,11 @@ describe Station do
 	let(:carriage)  { Carriage.new }
 
 
-	it "should not be able to dock a train if it doesn't have 1 carriage" do
+	it "should not be able to dock a train if it doesn't have at least one carriage" do
 		expect{ station.dock(train) }.to raise_error{ "A train must have at least one carriage." }
 	end
 
-	it "should be able to dock a train only if it has at least 1 carriage" do
+	it "should be able to dock a train only if it has at least one carriage" do
 		train.hold(carriage)
 		expect{ station.dock(train) }.to change{ station.train_count }.to 1
 	end
