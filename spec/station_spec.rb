@@ -4,10 +4,10 @@ require 'passenger'
 
 describe Station do
 
-	let(:station) {Station.new}
-	let(:station2) {Station.new}
-	let(:train) {double :train}
-	let(:passenger) {Passenger.new}
+	let(:station)   { Station.new }
+	let(:station2)  { Station.new }
+	let(:train)     { double :train }
+	let(:passenger) { Passenger.new }
 
 
 	it "should be able to dock a train" do

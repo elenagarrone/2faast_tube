@@ -5,7 +5,6 @@ class Station
 	include PassengerContainer
 
 	attr_reader :trains, :passengers
-	
 
 	def initialize
 		@trains = []
@@ -26,17 +25,11 @@ class Station
 	end
 
 	def transfer(station)
-		@trains.each do |train|
-			undock(train)
-			station.dock(train) 
-		end
+		@trains.each { |train| undock(train); station.dock(train) }
 	end
 
 	def move(station)
-		@passengers.each do |passenger|
-			release(passenger)
-			station.let_in(passenger)
-		end
+		@passengers.each { |passenger| release(passenger); station.let_in(passenger) }
 	end
 
 end
