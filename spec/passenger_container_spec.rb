@@ -4,7 +4,7 @@ class ContainerHolder; include PassengerContainer; end
 
 describe PassengerContainer do
 
-	let(:holder) { ContainerHolder.new }
+	let(:holder)    { ContainerHolder.new }
 	let(:passenger) { Passenger.new }
 
 

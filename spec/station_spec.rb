@@ -6,7 +6,7 @@ describe Station do
 
 	let(:station)   { Station.new }
 	let(:station2)  { Station.new }
-	let(:train)     { double :train }
+	let(:train)     { Train.new }
 	let(:passenger) { Passenger.new }
 
 
@@ -25,6 +25,7 @@ describe Station do
 	end
 
 	it "should transfer a passenger from station to station" do
+		passenger.touch_in
 		station.let_in(passenger)
 		expect{ station.move(station2) }.to change{ station2.passenger_count }.to 1
 	end
