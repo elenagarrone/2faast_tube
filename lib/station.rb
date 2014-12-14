@@ -19,6 +19,8 @@ class Station
 		if !train.carriages.empty?
 			raise "Sorry, no more train are accepted at this station" if train_count >= 4
 			@trains << train
+		else
+			raise "A train must have at least one carriage."
 		end
 	end
 

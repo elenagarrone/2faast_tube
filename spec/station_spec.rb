@@ -12,7 +12,7 @@ describe Station do
 
 
 	it "should not be able to dock a train if it doesn't have 1 carriage" do
-		expect{ station.dock(train) }.to change{ station.train_count }.by 0
+		expect{ station.dock(train) }.to raise_error{ "A train must have at least one carriage." }
 	end
 
 	it "should be able to dock a train only if it has at least 1 carriage" do
