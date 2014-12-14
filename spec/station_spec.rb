@@ -30,4 +30,16 @@ describe Station do
 		expect{ station.move_passenger(station2) }.to change{ station2.passenger_count }.to 1
 	end
 
+	it "should not release a passengerif the passenger didn't touch-out" do
+		passenger.add_credit(2); passenger.touch_in
+		station.let_in(passenger)
+		expect(station.let_out(passenger)).to eq("Touch out to get out from the station.")
+	end
+
+	it "should release a passenger only if he touched-out" do
+		passenger.add_credit(2); passenger.touch_in
+		station.let_in(passenger); passenger.touch_out
+		expect(station.let_out(passenger)).to eq("You can now exit.")
+	end
+
 end

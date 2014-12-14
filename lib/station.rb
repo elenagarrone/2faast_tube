@@ -32,4 +32,13 @@ class Station
 		@passengers.each { |passenger| release(passenger); stationB.let_in(passenger) }
 	end
 
+	def let_out(passenger)
+		if !passenger.touched?
+			passengers.delete(passenger)
+			return "You can now exit."
+		else
+			return "Touch out to get out from the station."
+		end
+	end
+
 end
