@@ -1,7 +1,10 @@
 class Passenger
 
+	attr_reader :oyster_credit
+
 	def initialize
 		@touch_in = false
+		@oyster_credit = 0
 	end
 
 	def touched?

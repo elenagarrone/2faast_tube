@@ -8,6 +8,10 @@ describe Passenger do
     expect(passenger.touched?).to be(false)
   end
 
+  it "should have an oyster credit of 0 when initialized" do
+    expect(passenger.oyster_credit).to equal(0)
+  end
+
   it "should be able to touch-in" do
     expect(passenger.touch_in).to be(true)
   end
