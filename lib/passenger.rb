@@ -16,7 +16,12 @@ class Passenger
 	end
 
 	def touch_in
-		@touch_in = true
+		if @oyster_credit >= 2
+			@oyster_credit -= 2
+			return @touch_in = true
+		else
+			return "You don't have enough credit. Please top-up your oyster card."
+		end
 	end
 
 	def touch_out

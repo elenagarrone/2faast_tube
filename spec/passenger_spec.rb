@@ -16,8 +16,15 @@ describe Passenger do
     expect{ passenger.add_credit(5) }.to change{ passenger.oyster_credit }.by 5
   end
 
-  it "should be able to touch-in" do
+  it "should be able to touch-in only with a minimum credit of £2" do
+    passenger.add_credit(4)
     expect(passenger.touch_in).to be(true)
+    expect(passenger.oyster_credit).to eq(2)
+  end
+
+  it "should not be able to touch-in if the oyster credit is less than £2" do
+    expect(passenger.touch_in).to eq("You don't have enough credit. Please top-up your oyster card.")
+    expect(passenger.touched?).to be(false)
   end
 
   it "should be able to touch-out" do
