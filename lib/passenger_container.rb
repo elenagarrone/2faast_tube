@@ -13,8 +13,12 @@ module PassengerContainer
 	end
 
   def let_in(passenger)
-  	raise "Sorry, you can't access, it's full"  if full?
-    passengers << passenger
+		if passenger.touched?
+	  	raise "Sorry, you can't access, it's full"  if full?
+	    passengers << passenger
+		else
+			return "Please, touch-in to enter the station"
+		end
   end
 
 	def release(passenger)

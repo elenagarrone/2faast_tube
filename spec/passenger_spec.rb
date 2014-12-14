@@ -18,6 +18,4 @@ describe Passenger do
     expect(passenger.touched?).to be(false)
   end
 
-
-
 end
