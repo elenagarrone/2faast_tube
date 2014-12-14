@@ -21,12 +21,6 @@ describe PassengerContainer do
 		expect(holder.let_in(passenger)).to eq("Please, touch-in to enter the station.")
 	end
 
-	it "should release a passenger" do
-		passenger_touched_in
-		holder.let_in(passenger)
-		expect{ holder.release(passenger) }.to change{ holder.passenger_count }.to 0
-	end
-
 	it "should not accept people when it's full" do
 		200.times { passenger_touched_in; holder.let_in(passenger) }
 		expect{ passenger.touch_in; holder.let_in(passenger) }.to raise_error("Sorry, you can't access, it's full.")

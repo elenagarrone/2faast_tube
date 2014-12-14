@@ -3,8 +3,8 @@ require 'carriage'
 
 describe Train do
 
-	let(:train)    { Train.new }
-	let(:carriage) { Carriage.new }
+	let(:train)     { Train.new }
+	let(:carriage)  { Carriage.new }
 
 
 	it "should hold a carriage" do

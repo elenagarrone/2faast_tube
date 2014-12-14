@@ -29,7 +29,7 @@ class Station
 	end
 
 	def move_passenger(stationB)
-		@passengers.each { |passenger| release(passenger); stationB.let_in(passenger) }
+		@passengers.each { |passenger| let_out(passenger); stationB.let_in(passenger) }
 	end
 
 	def let_out(passenger)

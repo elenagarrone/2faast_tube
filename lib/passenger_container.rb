@@ -21,10 +21,6 @@ module PassengerContainer
 		end
   end
 
-	def release(passenger)
-		passengers.delete(passenger)
-	end
-
 	def capacity
 		@capacity ||= DEFAULT_CAPACITY
 	end

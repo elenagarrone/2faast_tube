@@ -7,5 +7,9 @@ class Carriage
 	def initialize(capacity = 40)
 		@capacity = capacity
 	end
+	
+	def release(passenger)
+		passengers.delete(passenger)
+	end
 
 end
